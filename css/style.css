@@ -1,0 +1,40 @@
+
+#input_area{
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    background: #7900ff;
+}
+
+#text_box{
+    display: inline-block;
+    width: 96%;
+    height: auto;
+    padding: 10px;
+    margin: 10px 2%;
+    border-radius: 10px;
+    background: #ebebeb;
+}
+
+#text_box textarea{
+    vertical-align: bottom;
+    display: inline-block;
+    width: 90%;
+    resize: none;
+    outline: none;
+    border: none;
+    background: none;
+}
+#text_box button{
+    vertical-align: bottom;
+    border: none;
+    outline: none;
+    background: #7900ff;
+    border-radius: 3px;
+    color: #FFFFFF;
+    font-weight: bold;
+    cursor: pointer;
+    width: 60px;
+    height: 30px;
+}
