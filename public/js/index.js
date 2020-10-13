@@ -25,7 +25,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     // viewに反映
     messagesElm.innerHTML = `
-      ${newMessages.join("")}
+      <div>
+        ${newMessages.join("")}
+      </div>
     `;
     // スクロール最下部へ
     messagesElm.scrollTop = messagesElm.scrollHeight;
