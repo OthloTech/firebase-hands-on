@@ -1,4 +1,18 @@
 document.addEventListener("DOMContentLoaded", function () {
+  const userData = {};
+  const provider = new firebase.auth.GoogleAuthProvider();
+  firebase
+    .auth()
+    .signInWithPopup(provider)
+    .then(function (result) {
+      const user = result.user;
+      // photoURL uid displayName
+    })
+    .catch(function (error) {
+      alert("アカウント連携に失敗しました");
+      console.log({ error });
+    });
+
   const messagesElm = document.querySelector("#chat-messages");
   // データベース
   const messagesDb = firebase.database().ref("messages");
