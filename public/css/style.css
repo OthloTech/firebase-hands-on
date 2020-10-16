@@ -52,7 +52,9 @@ body,html{
   overflow-y: scroll;
   overflow-x: hidden;
 }
-.chat-message{
+
+/*--- ユーザ側の送信スタイル ---*/
+.chat-message-me{
   display: block;
   text-align: right;
   width: 100%;
@@ -62,7 +64,7 @@ body,html{
 }
 .chat-message__text-message{
   display: inline-block;
-  padding: 10px 10px;
+  padding: 10px;
   background: #6DA6F2;
   color: #FFFFFF;
   border-radius: 15px 15px 0 15px;
@@ -72,6 +74,20 @@ body,html{
   font-size: 5px;
   color: #888888;
   text-align: right;
+}
+
+.chat-message-you{
+  text-align: left;
+}
+
+.chat-message-you .chat-message__text-message{
+  background: #F2F2F2;
+  color: #4F4F4F;
+  border-radius: 15px 15px 15px 0;
+}
+
+.chat-message-you .chat-message__text-date{
+  text-align: left;
 }
 
 /*--- 送信部分 ---*/
