@@ -9,7 +9,19 @@ document.addEventListener("DOMContentLoaded", function () {
     // データ取得＆組み立て
     snapshot.forEach((message) => {
       newMessages.push(`
-        <div class="chat-message">
+        <div class="chat-message-you">
+          <div class="chat-message__text">
+            <div class="chat-message__text-message">
+              ${escapeHTML(message.val().text)}
+            </div>
+            <div class="chat-message__text-date">
+              ${escapeHTML(formatDate(new Date(message.val().date)))}
+            </div>
+          </div>
+        </div>
+      `);
+      newMessages.push(`
+        <div class="chat-message-me">
           <div class="chat-message__text">
             <div class="chat-message__text-message">
               ${escapeHTML(message.val().text)}
