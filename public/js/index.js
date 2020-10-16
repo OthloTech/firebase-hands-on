@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   const messagesElm = document.querySelector("#chat-messages");
+  // データベース
   const messagesDb = firebase.database().ref("messages");
 
   // realtime database 初期取得,更新イベント
@@ -9,15 +10,12 @@ document.addEventListener("DOMContentLoaded", function () {
     snapshot.forEach((message) => {
       newMessages.push(`
         <div class="chat-message">
-          <div class="chat-message__icon">
-            <img src="https://pbs.twimg.com/profile_images/745626656165879810/bKtSlWlv_400x400.jpg" />
-          </div>
           <div class="chat-message__text">
-            <div class="chat-message__text-date">
-              ${escapeHTML(formatDate(new Date(message.val().date)))}
-            </div>
             <div class="chat-message__text-message">
               ${escapeHTML(message.val().text)}
+            </div>
+            <div class="chat-message__text-date">
+              ${escapeHTML(formatDate(new Date(message.val().date)))}
             </div>
           </div>
         </div>

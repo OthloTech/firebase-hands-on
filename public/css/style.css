@@ -1,13 +1,17 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+body,html{
+  overflow: hidden;
 }
 
 .app-wrapper {
-  max-width: 600px;
   width: 100%;
   margin: 0 auto;
   display: flex;
+  overflow: hidden;
   flex-direction: column;
   position: absolute;
   top: 0;
@@ -18,61 +22,92 @@
 
 /* */
 
-.chat-messages {
-  flex-grow: 1;
+#room_list{
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  width: 300px;
+  height: 100vh;
+  background-color: #EEEEF1;
+  vertical-align: top;
+}
+
+#chat_area{
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  left: 300px;
+  display: inline-block;
+  width: calc(100% - 300px);
+  height: 100vh;
+  vertical-align: top;
+}
+
+/*--- chat ---*/
+.chat-messages{
+  height: calc(100vh - 78px);
+  padding-top: 10px;
   overflow-y: scroll;
-  border-bottom: solid 2px gray;
-  margin-bottom: 8px;
+  overflow-x: hidden;
 }
-
-.chat-message {
-  display: flex;
-  align-items: center;
-  margin: 16px 0;
-}
-
-.chat-message__icon {
-  width: 64px;
-}
-
-.chat-message__icon img {
+.chat-message{
+  display: block;
+  text-align: right;
   width: 100%;
-  border-radius: 99999px;
+}
+.chat-message__text{
+  padding: 0 15px 10px 0;
+}
+.chat-message__text-message{
+  display: inline-block;
+  padding: 10px 10px;
+  background: #6DA6F2;
+  color: #FFFFFF;
+  border-radius: 15px 15px 0 15px;
+}
+.chat-message__text-date{
+  display: block;
+  font-size: 5px;
+  color: #888888;
+  text-align: right;
 }
 
-.chat-message__text {
-  padding-left: 16px;
-  flex: 1;
+/*--- 送信部分 ---*/
+.chat-input{
+  display: block;
+  height: 68px;
+  width: 100%;
+  box-shadow: 0 -2px 4px rgba(0,0,0,.3);
 }
-
-.chat-message__text-date {
-  font-size: 12px;
-}
-
-.chat-message__text-message {
-  font-size: 18px;
-}
-
-/* */
-
-.chat-input {
-  display: flex;
-  margin-bottom: 12px;
-}
-
-.chat-message__icon {
-  width: 60px;
-}
-
-.chat-input__text {
-  flex-grow: 1;
-}
-
 .chat-input__text textarea {
+  display: inline-block;
+  margin: 15px;
   padding: 4px 8px;
-  height: 54px;
-  width: calc(100% - 20px);
+  height: 30px;
+  line-height: 30px;
+  width: calc(100% - 95px);
+  background: #EEEEF1;
+  border: none;
+  border-radius: 6px;
+  resize: none;
+  vertical-align: middle;
 }
+
 
 .chat-input__submit button {
+  opacity: 0;
 }
+.chat-input__submit{
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  background-image: url("../img/send_icon.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
