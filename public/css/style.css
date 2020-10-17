@@ -38,7 +38,8 @@ body,html{
 
 /* */
 
-#room_list{
+/*----- ユーザ一覧 -----*/
+#users_list{
   position: fixed;
   z-index: 100;
   top: 0;
@@ -46,8 +47,45 @@ body,html{
   display: inline-block;
   width: 300px;
   height: 100vh;
-  background-color: #EEEEF1;
+  background: #FBFBFB;
   vertical-align: top;
+}
+
+.users_list__box, .users_list__box-me{
+  background: #FEFEFE;
+  width: 260px;
+  height: 60px;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 10px 0 0 10px;
+}
+.users_list__box-me{
+  background: #EEEEF1;
+}
+
+.users_list__icon{
+  display: inline-block;
+  width: 70px;
+  height: 60px;
+  vertical-align: top;
+}
+
+.users_list__icon img{
+  width: 60px;
+  height: 60px;
+  border-radius: 60px;
+}
+
+.users_list__status{
+  display: inline-block;
+  height: 60px;
+  max-width: 190px;
+  vertical-align: top;
+}
+
+.users_list__name{
+  font-weight: bold;
+  line-height: 60px;
 }
 
 #chat_area{
